@@ -1,0 +1,2 @@
+buildCommand: ./build.sh
+startCommand: gunicorn app:app  # or your actual start command
