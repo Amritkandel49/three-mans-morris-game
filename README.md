@@ -2,6 +2,9 @@
 
 This is a web-based implementation of the Three Men's Morris game with an AI opponent using the minimax algorithm with alpha-beta pruning. The game features a beautiful web interface built with HTML, CSS, and JavaScript, with a FastAPI backend.
 
+## 🎮 Play It Now:
+**[🚀 Live Demo - Play Three Men's Morris](https://three-mens-morris.onrender.com)**
+
 ## Game Rules
 
 1. **Placement Phase**: Each player takes turns placing their 3 pieces on the board
