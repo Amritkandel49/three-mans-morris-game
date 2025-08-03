@@ -3,7 +3,7 @@
 This is a web-based implementation of the Three Men's Morris game with an AI opponent using the minimax algorithm with alpha-beta pruning. The game features a beautiful web interface built with HTML, CSS, and JavaScript, with a FastAPI backend.
 
 ## 🎮 Play It Now:
-**[🚀 Live Demo - Play Three Men's Morris](https://three-mens-morris.onrender.com)**
+**[🚀 Live Demo - Play Three Men's Morris](https://three-mans-morris-game.onrender.com/)**
 
 ## Game Rules
 
