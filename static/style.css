@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.difficulty-selector, .turn-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+select {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #f44336;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #da190b;
+}
+
+.game-area {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.game-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.current-phase, .current-turn {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.pieces-count {
+    display: flex;
+    gap: 30px;
+}
+
+.player-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.blue-piece, .red-piece {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.blue-piece {
+    background: #2196F3;
+}
+
+.red-piece {
+    background: #f44336;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.game-board {
+    width: 350px;
+    height: 350px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background: #f8f8f8;
+}
+
+.grid-lines line {
+    stroke: #333;
+    stroke-width: 2;
+}
+
+.position {
+    fill: white;
+    stroke: #333;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.position:hover {
+    fill: #e0e0e0;
+    stroke-width: 3;
+    r: 18;
+}
+
+.position.blue {
+    fill: #2196F3;
+}
+
+.position.red {
+    fill: #f44336;
+}
+
+.position.selected {
+    stroke: #FFD700;
+    stroke-width: 4;
+    fill: #FFEB3B;
+}
+
+.position.highlight {
+    fill: #4CAF50;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { r: 15; }
+    50% { r: 18; }
+    100% { r: 15; }
+}
+
+.label {
+    font-size: 12px;
+    font-weight: bold;
+    fill: #666;
+    user-select: none;
+}
+
+.game-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.game-message p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #4CAF50;
+}
+
+.game-message.error p {
+    border-left-color: #f44336;
+    background: #ffebee;
+    color: #c62828;
+}
+
+.game-message.success p {
+    border-left-color: #4CAF50;
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.game-message.info p {
+    border-left-color: #2196F3;
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.rules h3 {
+    margin-bottom: 15px;
+    color: #FFD700;
+}
+
+.rules ul {
+    list-style-position: inside;
+    line-height: 1.6;
+}
+
+.rules li {
+    margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .game-board {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .game-status {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-board {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .pieces-count {
+        gap: 20px;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Men's Morris</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Three Men's Morris</h1>
+            <h3 style="color: white; margin-bottom: 5px;">Developed By <span style="font-weight: bold; color: lightsalmon;">Amrit Kandel</span> And <span style="font-weight: bold; color: lightsalmon;">Prasish Timalsina</span></h3>
+            <hr>
+            <div class="game-info">
+                <div class="difficulty-selector">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="expert">Expert</option>
+                    </select>
+                </div>
+                <div class="turn-selector">
+                    <label for="whoFirst">Who goes first:</label>
+                    <select id="whoFirst">
+                        <option value="random" selected>Random</option>
+                        <option value="human">You (Blue)</option>
+                        <option value="ai">AI (Red)</option>
+                    </select>
+                </div>
+                <button id="newGameBtn" class="btn btn-primary">New Game</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="game-area">
+                <div class="game-status">
+                    <div class="current-phase">
+                        <span>Phase: </span>
+                        <span id="currentPhase">-</span>
+                    </div>
+                    <div class="current-turn">
+                        <span>Turn: </span>
+                        <span id="currentTurn">-</span>
+                    </div>
+                    <div class="pieces-count">
+                        <div class="player-count">
+                            <span class="blue-piece"></span>
+                            <span id="bluePieces">0/3</span>
+                        </div>
+                        <div class="player-count">
+                            <span class="red-piece"></span>
+                            <span id="redPieces">0/3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="board-container">
+                    <svg class="game-board" viewBox="0 0 300 300">
+                        <!-- Grid lines -->
+                        <g class="grid-lines">
+                            <!-- Horizontal lines -->
+                            <line x1="50" y1="50" x2="250" y2="50" />
+                            <line x1="50" y1="150" x2="250" y2="150" />
+                            <line x1="50" y1="250" x2="250" y2="250" />
+                            
+                            <!-- Vertical lines -->
+                            <line x1="50" y1="50" x2="50" y2="250" />
+                            <line x1="150" y1="50" x2="150" y2="250" />
+                            <line x1="250" y1="50" x2="250" y2="250" />
+                            
+                            <!-- Diagonal lines -->
+                            <line x1="50" y1="50" x2="250" y2="250" />
+                            <line x1="250" y1="50" x2="50" y2="250" />
+                        </g>
+                        
+                        <!-- Position circles -->
+                        <g class="positions">
+                            <circle cx="50" cy="50" r="15" class="position" data-pos="a" />
+                            <circle cx="150" cy="50" r="15" class="position" data-pos="b" />
+                            <circle cx="250" cy="50" r="15" class="position" data-pos="c" />
+                            <circle cx="50" cy="150" r="15" class="position" data-pos="d" />
+                            <circle cx="150" cy="150" r="15" class="position" data-pos="e" />
+                            <circle cx="250" cy="150" r="15" class="position" data-pos="f" />
+                            <circle cx="50" cy="250" r="15" class="position" data-pos="g" />
+                            <circle cx="150" cy="250" r="15" class="position" data-pos="h" />
+                            <circle cx="250" cy="250" r="15" class="position" data-pos="i" />
+                        </g>
+                        
+                        <!-- Position labels -->
+                        <g class="position-labels">
+                            <text x="35" y="45" class="label"></text>
+                            <text x="145" y="45" class="label"></text>
+                            <text x="245" y="45" class="label"></text>
+                            <text x="35" y="145" class="label"></text>
+                            <text x="145" y="145" class="label"></text>
+                            <text x="245" y="145" class="label"></text>
+                            <text x="35" y="245" class="label"></text>
+                            <text x="145" y="245" class="label"></text>
+                            <text x="245" y="245" class="label"></text>
+                        </g>
+                    </svg>
+                </div>
+                
+                <div class="game-message">
+                    <p id="gameMessage">Click "New Game" to start!</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="rules">
+                <h3>Rules:</h3>
+                <ul>
+                    <li><strong>Placement Phase:</strong> Each player places their 3 pieces on the board</li>
+                    <li><strong>Movement Phase:</strong> Move pieces to adjacent positions</li>
+                    <li><strong>Win:</strong> Form a line of 3 pieces (horizontal, vertical, or diagonal)</li>
+                    <li><strong>You are Blue</strong> | <strong>AI is Red</strong></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
