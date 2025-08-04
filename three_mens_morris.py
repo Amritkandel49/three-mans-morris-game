@@ -31,10 +31,10 @@ class ThreeMensMorris:
         
         # Difficulty levels with different search depths
         self.difficulty_depths = {
-            'easy': 2,
-            'medium': 3,
-            'hard': 5,
-            'expert': 7
+            'easy': 1,
+            'medium': 2,
+            'hard': 3,
+            'expert': 5
         }
         self.difficulty = difficulty
         self.search_depth = self.difficulty_depths.get(difficulty, 4)
