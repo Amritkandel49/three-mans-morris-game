@@ -32,10 +32,10 @@ g---h---i
 ### Game Features
 - **Human vs AI gameplay**: You play as Blue, AI plays as Red
 - **4 Difficulty Levels**: 
-  - Easy (depth 2) - AI makes occasional random moves
-  - Medium (depth 4) - Balanced gameplay
-  - Hard (depth 6) - Challenging opponent
-  - Expert (depth 8) - Maximum difficulty
+  - Easy (depth 1) - AI makes occasional random moves
+  - Medium (depth 2) - Balanced gameplay
+  - Hard (depth 3) - Challenging opponent
+  - Expert (depth 5) - Maximum difficulty
 - **Random Start**: Option to randomly decide who goes first
 - **Smart AI**: AI uses minimax with alpha-beta pruning for optimal moves
 - **Two Game Phases**: Placement phase and movement phase
